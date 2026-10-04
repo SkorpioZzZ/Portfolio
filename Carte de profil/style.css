@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #111827;
+    color: #f9fafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    padding: 20px;    
+}
+.card {
+    background-color: #1f2937;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.button {
+    background-color: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+.button:hover {
+    background-color: #0ea5e9;
+}
+.button:focus-visible,
+.contact a:focus-visible {
+    outline: 3px solid #f9fafb;
+    outline-offset: 3px;
+}
+.job {
+    font-size: 1.5em;
+    color: #38bdf8;
+    margin: 5px 0 15px;
+}
+.info {
+    font-size: 0.9em;
+    color: #d1d5db;
+    margin: 6px 0;
+}
+.info a {
+    color: inherit;
+}
+h1 {
+    margin: 10px 0 5px;
+}
+.contact {
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #111827;
+    border: 1px solid #374151;
+}
+.description {
+    color: #d1d5db;
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: 15px 0;
+}
