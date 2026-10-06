@@ -8,13 +8,33 @@
       name="description"
       content="Bienvenue sur le portfolio d'Alexandre Zapolski, développeur web junior. Découvrez mes projets et compétences en développement web."
     />
+    <meta name="theme-color" content="#080d12" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; frame-ancestors 'none'"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Alexandre Zapolski | Développeur Web junior"
+    />
+    <meta
+      property="og:description"
+      content="Découvrez le portfolio d'Alexandre Zapolski, développeur web junior."
+    />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
 
   <body>
     <header>
       <h1>Alexandre Zapolski</h1>
-      <p>Développeur web junior, je conçois des interfaces modernes, accessibles et responsives.</p>
+      <p>
+        Développeur web junior en formation, je crée des sites modernes,
+        accessibles et responsives, avec une attention particulière portée à la
+        clarté et à l’expérience utilisateur.
+      </p>
       <div class="hero_actions">
         <a class="primary_button" href="#projets">Voir mes projets</a>
         <a class="secondary_button" href="#contact">Me contacter</a>
@@ -29,24 +49,30 @@
         <li><a href="#projets">Projets</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="theme_toggle" type="button" aria-pressed="false">
+        Thème clair
+      </button>
     </nav>
 
     <main>
       <section id="apropos">
         <h2>À propos</h2>
         <p>
-          Actuellement en Bachelor Développement Web, je suis passionné par la création
-          de sites web et d'applications interactives. <br /><br />
-          Bienvenue sur mon portfolio !
+          Actuellement en Bachelor Développement Web, je suis passionné par la
+          création de sites web et d'applications interactives.<br /><br />
+          À travers ce portfolio, je vous présente mon parcours, mes compétences
+          et les projets que je réalise pour progresser.
         </p>
 
         <h3>Qui suis-je ?</h3>
         <p>
-          Je m'appelle Alexandre ZAPOLSKI. Diplômé d'un BTS en Négociation et
+          Je m'appelle Alexandre Zapolski. Diplômé d'un BTS en Négociation et
           Digitalisation de la Relation Client, j'ai d'abord travaillé dans
           l'automobile comme conseiller de vente. Aujourd'hui, je me reconvertis
-          dans le développement web, un domaine qui m'attire pour sa créativité,
-          sa logique et son évolution constante.<br /><br />
+          dans le développement web, un domaine associe créativité, logique et
+          apprentissage continu.
+        </p>
+        <p>
           J'aime créer, comprendre comment les choses fonctionnent et apprendre
           de nouvelles compétences. Mon objectif est de construire des sites
           modernes, clairs et adaptés aux besoins des utilisateurs.
@@ -59,7 +85,9 @@
           <li>
             2023-2025 : BTS Négociation et Digitalisation de la Relation Client
           </li>
-          <li>2025-2026 : Conseiller de vente dans l'automobile chez Peugeot</li>
+          <li>
+            2025-2026 : Conseiller de vente dans l'automobile chez Peugeot
+          </li>
           <li>2026-2027 : Bachelor Développement Web (en cours)</li>
         </ul>
       </section>
@@ -67,9 +95,11 @@
       <section id="pourquoi_le_developpement">
         <h2>Pourquoi le développement web ?</h2>
         <p>
-          Le développement web m'attire par sa nature créative et son potentiel
-          d'innovation. J'aime résoudre des problèmes et voir mes idées se
-          transformer en réalité numérique.
+          J’apprécie le développement web parce qu’il permet de partir d’une
+          idée et de la transformer en une interface réellement utilisable.
+          Chaque projet me donne l’occasion de résoudre des problèmes,
+          d’améliorer mon raisonnement et de créer une expérience plus claire
+          pour l’utilisateur.
         </p>
       </section>
 
@@ -77,59 +107,35 @@
         <h2>Compétences</h2>
         <ul>
           <li>Front-end : HTML, CSS, JavaScript</li>
-          <li>Back-end : PHP, MySQL, phpMyAdmin</li>
-          <li>Outils : Git, VS Code</li>
+          <li>Back-end : PHP, MySQL</li>
+          <li>Outils : Git, GitHub, VS Code</li>
         </ul>
-        <h2>Objectifs</h2>
+        <h3>Objectifs</h3>
         <p>
-          Je souhaite renforcer mes bases en HTML, CSS, JavaScript et Python,
-          créer des interfaces responsives et structurer des projets web
-          complets. Je recherche une opportunité pour progresser au sein d'une
-          équipe et mettre ces compétences en pratique.
+          Je souhaite consolider mes compétences en HTML, CSS, JavaScript, PHP
+          et Python, tout en développant ma capacité à concevoir des projets web
+          complets. Je recherche une opportunité stage, alternance ou premier
+          poste qui me permettra de progresser au sein d’une équipe et de mettre
+          mes connaissances en pratique.
         </p>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>
-          Vous pouvez me contacter pour échanger autour d'un projet, d'une
-          opportunité ou de mon parcours.
-        </p>
-
-        <div class="contact_links">
-          <a href="mailto:zapolski.alexandre2991@gmail.com"
-            >zapolski.alexandre2991@gmail.com</a
-          >
-          <a href="tel:+33650429493">06 50 42 94 93</a>
-          <a
-            href="https://github.com/SkorpioZzZ"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >
-          <a
-            href="https://www.instagram.com/alex__zpl/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Instagram</a
-          >
-        </div>
       </section>
 
       <section id="projets">
         <h2>Projets</h2>
         <ul class="projets">
           <li>
-            <img
-              src="Carte de profil/Carte de Profil.jpg"
-              alt="Aperçu de la carte de profil"
-            />
-            <h3>Carte de Profil</h3>
-            <p>Une carte personnelle créée avec HTML et CSS.</p>
-            <p class="project_tech">HTML · CSS</p>
+            <img src="math_cov/math_cov.png" alt="" />
+            <h3>Site Vitrine Fictif</h3>
+            <p>Un site vitrine fictif créée avec HTML, CSS et JavaScript.</p>
+            <p class="project_tech">HTML - CSS - JavaScript</p>
             <div class="project_links">
-              <a href="Carte de profil/index.html">Voir le projet</a>
-              <a href="https://github.com/SkorpioZzZ" target="_blank" rel="noopener noreferrer">Code source</a>
+              <a href="../Math_cov/index.html">Voir le projet</a>
+              <a
+                href="https://github.com/SkorpioZzZ/Math_Cov"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Code source</a
+              >
             </div>
           </li>
           <li>
@@ -145,12 +151,86 @@
             <div class="projet_future"></div>
             <h3>Projet en préparation</h3>
             <p>
-              Un projet pour progresser dans la création de pages
-              responsives et structurées.
+              Un projet pour progresser dans la création de pages responsives et
+              structurées.
             </p>
             <span class="project_status">Bientôt disponible</span>
           </li>
         </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Vous pouvez me contacter pour échanger autour d'un projet, d'une
+          opportunité ou de mon parcours.
+        </p>
+
+        <form class="contact_form" action="traitement.php" method="post">
+          <input type="hidden" name="csrf_token" value="" />
+          <p class="form_error" id="csrf-error" hidden>
+            Le formulaire n’a pas pu être initialisé. Vérifiez que le site est
+            lancé avec un serveur PHP, puis actualisez la page.
+          </p>
+          <div>
+            <label for="nom">Nom</label>
+            <input
+              type="text"
+              id="nom"
+              name="nom"
+              autocomplete="name"
+              maxlength="100"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              maxlength="254"
+              required
+            />
+          </div>
+
+          <div class="form_subject">
+            <label for="sujet">Sujet</label>
+            <input
+              type="text"
+              id="sujet"
+              name="sujet"
+              maxlength="150"
+              required
+            />
+          </div>
+
+          <div class="form_message">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              maxlength="5000"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form_trap" aria-hidden="true">
+            <label for="website">Ne pas remplir ce champ</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
+          <button type="submit" disabled>Envoyer le message</button>
+        </form>
       </section>
     </main>
 
