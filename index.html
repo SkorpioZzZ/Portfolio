@@ -12,7 +12,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; frame-ancestors 'none'"
+      content="default-src 'self'; base-uri 'self'; form-action 'self' https://api.web3forms.com; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; frame-ancestors 'none'"
     />
     <meta property="og:type" content="website" />
     <meta
@@ -166,18 +166,23 @@
           opportunité ou de mon parcours.
         </p>
 
-        <form class="contact_form" action="traitement.php" method="post">
-          <input type="hidden" name="csrf_token" value="" />
-          <p class="form_error" id="csrf-error" hidden>
-            Le formulaire n’a pas pu être initialisé. Vérifiez que le site est
-            lancé avec un serveur PHP, puis actualisez la page.
-          </p>
+        <form
+          class="contact_form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="65ddaa1f-b4f3-42bf-a58d-a4510def24a2"
+          />
+
           <div>
             <label for="nom">Nom</label>
             <input
               type="text"
               id="nom"
-              name="nom"
+              name="name"
               autocomplete="name"
               maxlength="100"
               required
@@ -201,7 +206,7 @@
             <input
               type="text"
               id="sujet"
-              name="sujet"
+              name="subject"
               maxlength="150"
               required
             />
@@ -218,18 +223,7 @@
             ></textarea>
           </div>
 
-          <div class="form_trap" aria-hidden="true">
-            <label for="website">Ne pas remplir ce champ</label>
-            <input
-              type="text"
-              id="website"
-              name="website"
-              tabindex="-1"
-              autocomplete="off"
-            />
-          </div>
-
-          <button type="submit" disabled>Envoyer le message</button>
+          <button type="submit">Envoyer le message</button>
         </form>
       </section>
     </main>
