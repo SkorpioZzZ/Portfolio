@@ -149,6 +149,8 @@ if (contactForm) {
   const fields = [
     ...contactForm.querySelectorAll('input:not([name="website"]), textarea'),
   ];
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const formStatus = contactForm.querySelector(".form_status");
 
   fields.forEach((field) => {
     field.addEventListener("blur", () => validateField(field));
@@ -159,12 +161,50 @@ if (contactForm) {
     });
   });
 
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
     const formIsValid = fields.every((field) => validateField(field));
 
     if (!formIsValid) {
-      event.preventDefault();
       fields.find((field) => field.getAttribute("aria-invalid") === "true")?.focus();
+      return;
+    }
+
+    if (!submitButton || !formStatus) {
+      return;
+    }
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Envoi en cours...";
+    formStatus.hidden = true;
+    formStatus.className = "form_status";
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: new FormData(contactForm),
+      });
+      const result = await response.json();
+
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.message || "L’envoi du message a échoué.");
+      }
+
+      contactForm.reset();
+      formStatus.textContent =
+        "Votre message a bien été envoyé. Merci, je vous répondrai rapidement.";
+      formStatus.classList.add("success");
+    } catch (error) {
+      formStatus.textContent =
+        error instanceof Error
+          ? error.message
+          : "Impossible d’envoyer votre message. Veuillez réessayer.";
+      formStatus.classList.add("error");
+    } finally {
+      formStatus.hidden = false;
+      submitButton.disabled = false;
+      submitButton.textContent = "Envoyer le message";
     }
   });
 }
