@@ -40,6 +40,15 @@ Site vitrine de démonstration pour une activité de covering et de detailing au
 
 D'autres projets seront ajoutés au fur et à mesure de leur réalisation.
 
+### À table
+
+Application de recettes avec roulette, filtres et gestion de recettes personnelles. Les recettes personnalisées sont enregistrées dans le stockage local du navigateur.
+
+**Technologies :** HTML, CSS, JavaScript
+
+- [Voir le site](https://skorpiozzz.github.io/Portfolio/a-table/)
+- [Voir le code](https://github.com/SkorpioZzZ/A-table)
+
 ## Déploiement
 
 Le portfolio est un site statique hébergé avec **GitHub Pages**.
@@ -55,6 +64,10 @@ Portfolio/
 ├── script.js
 ├── math_cov/
 │   └── math_cov.png
+├── a-table/
+│   ├── index.html
+│   ├── icons/
+│   └── src/
 ├── .gitignore
 └── README.md
 ```
