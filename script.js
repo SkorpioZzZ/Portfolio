@@ -19,7 +19,6 @@ function updateThemeToggle() {
   themeToggle?.setAttribute("aria-pressed", String(isLightTheme));
   if (themeToggle) {
     const nextTheme = isLightTheme ? "sombre" : "clair";
-    themeToggle.textContent = `Thème ${nextTheme}`;
     themeToggle.setAttribute("aria-label", `Activer le thème ${nextTheme}`);
     themeToggle.setAttribute("title", `Activer le thème ${nextTheme}`);
   }
