@@ -27,7 +27,9 @@
 section.reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 section.reveal.is-visible {
@@ -55,7 +57,10 @@ section.reveal.is-visible {
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
-  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .back_to_top.is-visible {
@@ -80,7 +85,10 @@ body {
     linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px),
     radial-gradient(circle at 50% -20%, #24353c 0, var(--background) 52%);
-  background-size: 42px 42px, 42px 42px, auto;
+  background-size:
+    42px 42px,
+    42px 42px,
+    auto;
   font-family: "Inter", system-ui, sans-serif;
   line-height: 1.6;
 }
@@ -90,14 +98,22 @@ body {
     linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px),
     radial-gradient(circle at 50% -20%, #ffffff 0, var(--background) 52%);
-  background-size: 42px 42px, 42px 42px, auto;
+  background-size:
+    42px 42px,
+    42px 42px,
+    auto;
 }
 
 body::before {
   position: fixed;
   z-index: -1;
   inset: 0;
-  background: linear-gradient(115deg, transparent 49.8%, rgb(242 107 33 / 12%) 50%, transparent 50.2%);
+  background: linear-gradient(
+    115deg,
+    transparent 49.8%,
+    rgb(242 107 33 / 12%) 50%,
+    transparent 50.2%
+  );
   background-size: 180px 180px;
   content: "";
   pointer-events: none;
@@ -113,7 +129,11 @@ header {
 }
 
 [data-theme="light"] header {
-  background: linear-gradient(135deg, rgb(255 255 255 / 97%), rgb(231 238 236 / 92%));
+  background: linear-gradient(
+    135deg,
+    rgb(255 255 255 / 97%),
+    rgb(231 238 236 / 92%)
+  );
 }
 
 header h1 {
@@ -243,8 +263,11 @@ header p {
   border-radius: 999px;
   background: var(--surface-light);
   cursor: pointer;
-  transition: border-color 0.2s ease, background 0.2s ease,
-    box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .theme_toggle::before {
@@ -261,7 +284,10 @@ header p {
   content: "☀";
   font-size: 0.95rem;
   line-height: 1;
-  transition: left 0.25s ease, color 0.25s ease, background 0.25s ease;
+  transition:
+    left 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease;
 }
 
 .theme_toggle[aria-pressed="true"]::before {
@@ -425,7 +451,9 @@ section p {
   outline: 0;
   background: var(--surface-light);
   font: inherit;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .contact_form textarea {
@@ -538,7 +566,9 @@ section li {
   border: 1px solid var(--border);
   border-radius: 2px;
   background: var(--surface-light);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .projets li:hover {
@@ -653,7 +683,6 @@ footer p {
     justify-content: center;
     padding: 14px 0 8px;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -671,4 +700,31 @@ footer p {
     opacity: 1;
     transform: none;
   }
+}
+
+.homelab_schema {
+  margin: 0 0 24px;
+}
+
+.homelab_schema img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.homelab_schema figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+#homelab > p {
+  max-width: none;
+}
+
+.projets img.photo_materiel {
+  height: auto;
+  aspect-ratio: 4 / 3;
 }

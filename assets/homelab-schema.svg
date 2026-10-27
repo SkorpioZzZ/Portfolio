@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 270" role="img" aria-labelledby="t d">
+  <title id="t">Architecture du homelab</title>
+  <desc id="d">Un ThinkPad T420s sous Linux Mint administre le serveur Dell Latitude E5510 sous Debian 13. Open WebUI et Ollama sont joints par un tunnel SSH, Portainer par le réseau local. Samba est prévu pour un futur NAS.</desc>
+  <defs>
+    <marker id="arrow_ssh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f26b21"/>
+    </marker>
+    <marker id="arrow_lan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4fb3a9"/>
+    </marker>
+    <marker id="arrow_api" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9aa8ad"/>
+    </marker>
+  </defs>
+
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif">
+    <rect x="0" y="0" width="760" height="270" rx="3" fill="#0f1820" stroke="#33434a"/>
+    <rect x="0" y="0" width="70" height="3" fill="#f26b21"/>
+
+    <!-- Poste client -->
+    <rect x="16" y="70" width="150" height="130" rx="3" fill="#18232b" stroke="#33434a"/>
+    <text x="91" y="115" font-size="14" font-weight="700" fill="#f1f4f2" text-anchor="middle">ThinkPad T420s</text>
+    <text x="91" y="135" font-size="12" fill="#9aa8ad" text-anchor="middle">Linux Mint</text>
+    <text x="91" y="170" font-size="12" fill="#ff9b55" text-anchor="middle">Poste d'administration</text>
+
+    <text x="91" y="226" font-size="11" fill="#9aa8ad" text-anchor="middle">Réseau domestique</text>
+    <text x="91" y="241" font-size="11" fill="#9aa8ad" text-anchor="middle">Aucun service exposé</text>
+    <text x="91" y="256" font-size="11" fill="#9aa8ad" text-anchor="middle">sur Internet</text>
+
+    <!-- Flèches -->
+    <line x1="166" y1="102" x2="262" y2="102" stroke="#f26b21" stroke-width="2" marker-end="url(#arrow_ssh)"/>
+    <text x="208" y="93" font-size="12" font-weight="600" fill="#ff9b55" text-anchor="middle">Tunnel SSH</text>
+    <line x1="166" y1="152" x2="262" y2="152" stroke="#4fb3a9" stroke-width="2" marker-end="url(#arrow_lan)"/>
+    <text x="208" y="143" font-size="12" font-weight="600" fill="#4fb3a9" text-anchor="middle">Réseau local</text>
+
+    <!-- Serveur -->
+    <rect x="250" y="16" width="494" height="238" rx="3" fill="none" stroke="#33434a" stroke-width="1.5"/>
+    <text x="266" y="40" font-size="13" font-weight="700" fill="#f1f4f2">Dell Latitude E5510 · Debian 13</text>
+
+    <!-- Docker -->
+    <rect x="266" y="54" width="462" height="130" rx="3" fill="#131d25" stroke="#f26b21" stroke-opacity="0.6"/>
+    <text x="280" y="73" font-size="11" font-weight="700" fill="#ff9b55" letter-spacing="1.5">DOCKER</text>
+
+    <!-- Open WebUI -->
+    <rect x="280" y="84" width="126" height="88" rx="3" fill="#18232b" stroke="#33434a"/>
+    <text x="343" y="110" font-size="14" font-weight="700" fill="#f1f4f2" text-anchor="middle">Open WebUI</text>
+    <text x="343" y="129" font-size="12" fill="#9aa8ad" text-anchor="middle">Interface IA</text>
+    <text x="343" y="156" font-size="11" font-weight="600" fill="#ff9b55" text-anchor="middle">via tunnel SSH</text>
+
+    <!-- Ollama -->
+    <rect x="434" y="84" width="126" height="88" rx="3" fill="#18232b" stroke="#33434a"/>
+    <text x="497" y="110" font-size="14" font-weight="700" fill="#f1f4f2" text-anchor="middle">Ollama</text>
+    <text x="497" y="129" font-size="12" fill="#9aa8ad" text-anchor="middle">Modèles IA locaux</text>
+    <text x="497" y="156" font-size="11" font-weight="600" fill="#ff9b55" text-anchor="middle">via tunnel SSH</text>
+
+    <line x1="408" y1="128" x2="432" y2="128" stroke="#9aa8ad" stroke-width="1.6" marker-start="url(#arrow_api)" marker-end="url(#arrow_api)"/>
+
+    <!-- Portainer -->
+    <rect x="588" y="84" width="126" height="88" rx="3" fill="#18232b" stroke="#33434a"/>
+    <text x="651" y="110" font-size="14" font-weight="700" fill="#f1f4f2" text-anchor="middle">Portainer CE</text>
+    <text x="651" y="129" font-size="12" fill="#9aa8ad" text-anchor="middle">Gestion conteneurs</text>
+    <text x="651" y="156" font-size="11" font-weight="600" fill="#4fb3a9" text-anchor="middle">via réseau local</text>
+
+    <!-- Samba prévu -->
+    <rect x="266" y="196" width="462" height="46" rx="3" fill="none" stroke="#9aa8ad" stroke-dasharray="6 5"/>
+    <text x="497" y="216" font-size="13" font-weight="600" fill="#9aa8ad" text-anchor="middle">Samba · partage de fichiers / NAS</text>
+    <text x="497" y="233" font-size="11" fill="#9aa8ad" text-anchor="middle">Prévu, pas encore en place</text>
+  </g>
+</svg>

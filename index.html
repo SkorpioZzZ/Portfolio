@@ -61,6 +61,7 @@
         <li><a href="#parcours">Parcours</a></li>
         <li><a href="#apprentissage">Compétences</a></li>
         <li><a href="#projets">Projets</a></li>
+        <li><a href="#homelab">Homelab</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -94,21 +95,50 @@
         <h2>Mon parcours</h2>
         <h3>2026-2027 : Bachelor 3 Développement Web — DECODE (en cours)</h3>
         <ul>
-          <li>Développement front-end et back-end, algorithmique, bases de données et administration Linux.</li>
-          <li>Découverte de Docker, Symfony et Vue.js, de la sécurité web, du développement collaboratif et de l’intelligence artificielle.</li>
-          <li>Projets pratiques pour appliquer les connaissances acquises pendant l’année.</li>
+          <li>
+            Développement front-end et back-end, algorithmique, bases de données
+            et administration Linux.
+          </li>
+          <li>
+            Découverte de Docker, Symfony et Vue.js, de la sécurité web, du
+            développement collaboratif et de l’intelligence artificielle.
+          </li>
+          <li>
+            Projets pratiques pour appliquer les connaissances acquises pendant
+            l’année.
+          </li>
         </ul>
         <h3>2025-2026 : Conseiller de vente automobile — Peugeot</h3>
         <ul>
-          <li>Accompagnement des clients particuliers et professionnels dans leurs projets automobiles.</li>
-          <li>Analyse des besoins, présentation de solutions adaptées et suivi commercial.</li>
-          <li>Développement des compétences en communication, négociation et organisation.</li>
+          <li>
+            Accompagnement des clients particuliers et professionnels dans leurs
+            projets automobiles.
+          </li>
+          <li>
+            Analyse des besoins, présentation de solutions adaptées et suivi
+            commercial.
+          </li>
+          <li>
+            Développement des compétences en communication, négociation et
+            organisation.
+          </li>
         </ul>
-        <h3>2023-2025 : BTS Négociation et Digitalisation de la Relation Client (NDRC)</h3>
+        <h3>
+          2023-2025 : BTS Négociation et Digitalisation de la Relation Client
+          (NDRC)
+        </h3>
         <ul>
-          <li>Techniques de vente, relation client et digitalisation des activités commerciales.</li>
-          <li>Expérience en entreprise : prospection, analyse des besoins et suivi client.</li>
-          <li>Découverte des outils numériques, notamment WordPress et PrestaShop.</li>
+          <li>
+            Techniques de vente, relation client et digitalisation des activités
+            commerciales.
+          </li>
+          <li>
+            Expérience en entreprise : prospection, analyse des besoins et suivi
+            client.
+          </li>
+          <li>
+            Découverte des outils numériques, notamment WordPress et PrestaShop.
+          </li>
         </ul>
       </section>
 
@@ -226,6 +256,77 @@
                 >Voir le code</a
               >
             </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="homelab">
+        <h2>Homelab</h2>
+        <p>
+          Mon homelab est un serveur personnel basé sur un ancien Dell Latitude
+          E5510 sous Debian GNU/Linux 13. Je l'ai mis en place pour expérimenter
+          l'administration système Linux, l'auto-hébergement de services, la
+          conteneurisation et l'intelligence artificielle locale.
+        </p>
+        <figure class="homelab_schema">
+          <img
+            src="assets/homelab-schema.svg"
+            alt="Schéma de l'architecture du homelab : un ThinkPad d'administration accède au serveur Dell sous Debian 13 par tunnel SSH et par le réseau local, avec Docker, Open WebUI, Ollama et Portainer."
+            width="760"
+            height="270"
+            loading="lazy"
+          />
+          <figcaption>
+            Architecture du homelab : accès par tunnel SSH et réseau local.
+          </figcaption>
+        </figure>
+        <ul class="projets">
+          <li>
+            <img
+              class="photo_materiel"
+              src="assets/homelab-dell.jpg"
+              alt="Le Dell Latitude E5510 du homelab, allumé sur l'écran de connexion Debian 13"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+            <h3>Matériel</h3>
+            <p>
+              Dell Latitude E5510 équipé d'un processeur Intel Core i5 M 560, de
+              4 Go de RAM et d'un SSD de 250 Go.
+            </p>
+            <p class="project_tech">
+              Dell Latitude E5510, Intel Core i5 M 560, 4 Go RAM, SSD 250 Go
+            </p>
+          </li>
+          <li>
+            <h3>Système et services</h3>
+            <p>
+              Le serveur fonctionne sous Debian GNU/Linux 13 (Trixie). Docker et
+              Docker Compose permettent de déployer et de gérer Open WebUI pour
+              l'interface utilisateur de l'IA locale, Ollama pour l'exécution
+              des modèles d'IA locaux et Portainer CE pour l'administration des
+              conteneurs. Samba est également utilisé pour le partage de
+              fichiers sur le réseau local.
+            </p>
+            <p class="project_tech">
+              Debian 13, Linux, Docker, Docker Compose, Open WebUI, Ollama,
+              Portainer CE, Samba
+            </p>
+          </li>
+          <li>
+            <h3>Ce que j'y apprends</h3>
+            <p>
+              Ce projet me permet de pratiquer l'administration Linux, le
+              déploiement et la gestion de conteneurs, l'administration à
+              distance par SSH, la configuration du réseau et du pare-feu,
+              l'hébergement de services, le déploiement d'une IA locale ainsi
+              que le diagnostic des problèmes et la documentation technique.
+            </p>
+            <p class="project_tech">
+              Administration système, Linux, SSH, Docker, Réseau, Sécurité, IA
+              locale, Dépannage, Documentation technique
+            </p>
           </li>
         </ul>
       </section>
