@@ -29,3 +29,5 @@ composer.phar
 /coverage/
 /build/
 
+# Configuration Claude Code (locale)
+.claude/
