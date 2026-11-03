@@ -18,7 +18,25 @@ const navigationLinks = [
 const contactForm = document.querySelector(".contact_form");
 const projectCards = [...document.querySelectorAll(".projets li")];
 const themeToggle = document.querySelector(".theme_toggle");
-const savedTheme = localStorage.getItem("portfolio-theme");
+const THEME_KEY = "portfolio-theme";
+
+function readStoredTheme() {
+  try {
+    return localStorage.getItem(THEME_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function storeTheme(theme) {
+  try {
+    localStorage.setItem(THEME_KEY, theme);
+  } catch {
+    // Stockage indisponible : le thème s'applique sans être mémorisé.
+  }
+}
+
+const savedTheme = readStoredTheme();
 
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
@@ -46,10 +64,10 @@ themeToggle?.addEventListener("click", () => {
 
   if (isLightTheme) {
     delete document.documentElement.dataset.theme;
-    localStorage.setItem("portfolio-theme", "dark");
+    storeTheme("dark");
   } else {
     document.documentElement.dataset.theme = "light";
-    localStorage.setItem("portfolio-theme", "light");
+    storeTheme("light");
   }
 
   updateThemeToggle();
