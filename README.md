@@ -67,7 +67,6 @@ Portfolio/
 │   ├── homelab-dell.jpg
 │   ├── homelab-schema.svg
 │   └── portfolio-preview.png
-├── .htaccess
 ├── .gitignore
 └── README.md
 ```
