@@ -230,10 +230,10 @@ if (contactForm) {
         method: contactForm.method,
         body: new FormData(contactForm),
       });
-      const result = await response.json();
+      const result = await response.json().catch(() => null);
 
-      if (!response.ok || result.success !== true) {
-        throw new Error(result.message || "L’envoi du message a échoué.");
+      if (!response.ok || result?.success !== true) {
+        throw new Error(result?.message || `HTTP ${response.status}`);
       }
 
       contactForm.reset();
@@ -241,11 +241,10 @@ if (contactForm) {
         "[OK] Message transmis. Merci, je vous répondrai rapidement.";
       formStatus.classList.add("success");
     } catch (error) {
-      formStatus.textContent = `[ERR] ${
-        error instanceof Error
-          ? error.message
-          : "Impossible d’envoyer votre message. Veuillez réessayer."
-      }`;
+      // Le détail technique reste dans la console, le visiteur voit un message clair.
+      console.error("Échec de l’envoi du formulaire :", error);
+      formStatus.textContent =
+        "[ERR] Impossible d’envoyer votre message. Veuillez réessayer plus tard.";
       formStatus.classList.add("error");
     } finally {
       formStatus.hidden = false;
