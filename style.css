@@ -1064,7 +1064,7 @@ section ul:not(.projets, .skills) li::before {
 }
 
 .projets li:hover,
-.projets li.is-hovered,
+.projets li:focus-within,
 .skills li:hover {
   border-color: var(--accent);
   transform: translateY(-5px);

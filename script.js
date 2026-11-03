@@ -16,7 +16,6 @@ const navigationLinks = [
   ...document.querySelectorAll(".nav_bar a, .section_rail a"),
 ];
 const contactForm = document.querySelector(".contact_form");
-const projectCards = [...document.querySelectorAll(".projets li")];
 const themeToggle = document.querySelector(".theme_toggle");
 const THEME_KEY = "portfolio-theme";
 
@@ -127,19 +126,6 @@ const sectionObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => sectionObserver.observe(section));
-
-projectCards.forEach((card) => {
-  card.addEventListener("mouseenter", () => card.classList.add("is-hovered"));
-  card.addEventListener("mouseleave", () =>
-    card.classList.remove("is-hovered"),
-  );
-  card.addEventListener("focusin", () => card.classList.add("is-hovered"));
-  card.addEventListener("focusout", (event) => {
-    if (!card.contains(event.relatedTarget)) {
-      card.classList.remove("is-hovered");
-    }
-  });
-});
 
 const errorMessages = {
   name: "Veuillez saisir votre nom.",
