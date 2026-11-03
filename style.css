@@ -1145,7 +1145,7 @@ section ul:not(.projets, .skills) li::before {
   border-color: var(--accent);
 }
 
-#apprentissage strong {
+#competences strong {
   color: var(--accent-light);
 }
 
