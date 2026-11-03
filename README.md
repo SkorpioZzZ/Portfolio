@@ -62,12 +62,12 @@ Portfolio/
 ├── index.html
 ├── style.css
 ├── script.js
-├── math_cov/
-│   └── math_cov.png
-├── a-table/
-│   ├── index.html
-│   ├── icons/
-│   └── src/
+├── assets/
+│   ├── projets/          # captures des projets (WebP)
+│   ├── homelab-dell.jpg
+│   ├── homelab-schema.svg
+│   └── portfolio-preview.png
+├── .htaccess
 ├── .gitignore
 └── README.md
 ```
