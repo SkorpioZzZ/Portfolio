@@ -7,6 +7,30 @@
   <desc id="d">Un ThinkPad T420s sous Linux Mint administre un Dell Latitude E5510 sous Debian 13. Docker Compose héberge Open WebUI, Ollama et Portainer. Samba fonctionne directement sur Debian pour les partages de fichiers et les sauvegardes sur le réseau local.</desc>
 
   <defs>
+    <style>
+      .flow {
+        stroke-dasharray: 10 6;
+        animation: flow 1.2s linear infinite;
+      }
+
+      .flow_slow {
+        stroke-dasharray: 4 4;
+        animation: flow 2s linear infinite;
+      }
+
+      @keyframes flow {
+        to {
+          stroke-dashoffset: -32;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .flow,
+        .flow_slow {
+          animation: none;
+        }
+      }
+    </style>
     <marker id="arrow_ssh" viewBox="0 0 10 10"
             refX="9" refY="5" markerWidth="8"
             markerHeight="8" orient="auto">
@@ -65,14 +89,14 @@
           fill="#9aa8ad" text-anchor="middle">Réseau domestique</text>
 
     <!-- Accès SSH -->
-    <line x1="314" y1="256" x2="405" y2="256"
+    <line class="flow" x1="314" y1="256" x2="405" y2="256"
           stroke="#f26b21" stroke-width="3"
           marker-end="url(#arrow_ssh)"/>
     <text x="359" y="235" font-size="15" font-weight="600"
           fill="#ff9b55" text-anchor="middle">SSH</text>
 
     <!-- Accès réseau local -->
-    <line x1="314" y1="358" x2="405" y2="358"
+    <line class="flow" x1="314" y1="358" x2="405" y2="358"
           stroke="#4fb3a9" stroke-width="3"
           marker-end="url(#arrow_lan)"/>
     <text x="359" y="338" font-size="15" font-weight="600"
@@ -133,7 +157,7 @@
           fill="#ff9b55" text-anchor="middle">Service interne</text>
 
     <!-- Communication Open WebUI / Ollama -->
-    <line x1="654" y1="356" x2="679" y2="356"
+    <line class="flow_slow" x1="654" y1="356" x2="679" y2="356"
           stroke="#9aa8ad" stroke-width="2"
           marker-start="url(#arrow_api)"
           marker-end="url(#arrow_api)"/>

@@ -1,5 +1,20 @@
 const sections = [...document.querySelectorAll("main > section")];
-const navigationLinks = [...document.querySelectorAll(".nav_bar a")];
+
+const sectionRail = document.createElement("nav");
+sectionRail.className = "section_rail";
+sectionRail.setAttribute("aria-hidden", "true");
+sections.forEach((section, index) => {
+  const railLink = document.createElement("a");
+  railLink.href = `#${section.id}`;
+  railLink.tabIndex = -1;
+  railLink.textContent = String(index + 1).padStart(2, "0");
+  sectionRail.append(railLink);
+});
+document.body.append(sectionRail);
+
+const navigationLinks = [
+  ...document.querySelectorAll(".nav_bar a, .section_rail a"),
+];
 const contactForm = document.querySelector(".contact_form");
 const projectCards = [...document.querySelectorAll(".projets li")];
 const themeToggle = document.querySelector(".theme_toggle");
@@ -40,6 +55,30 @@ themeToggle?.addEventListener("click", () => {
   updateThemeToggle();
 });
 
+function animateCounter(counter) {
+  const target = Number(counter.dataset.count);
+  const suffix = counter.dataset.suffix ?? "";
+  const duration = 900;
+  const start = performance.now();
+
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const value = Math.round(target * progress);
+
+    counter.textContent = `${String(value).padStart(2, "0")}${suffix}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+if (!prefersReducedMotion) {
+  document.querySelectorAll("[data-count]").forEach(animateCounter);
+}
+
 sections.forEach((section) => {
   section.classList.add("reveal");
 });
@@ -58,7 +97,7 @@ if (prefersReducedMotion) {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.12 },
+    { threshold: 0, rootMargin: "0px 0px -10% 0px" },
   );
 
   sections.forEach((section) => revealObserver.observe(section));
@@ -177,7 +216,7 @@ if (contactForm) {
     }
 
     submitButton.disabled = true;
-    submitButton.textContent = "Envoi en cours...";
+    submitButton.textContent = "Transmission en cours...";
     formStatus.hidden = true;
     formStatus.className = "form_status";
 
@@ -194,18 +233,19 @@ if (contactForm) {
 
       contactForm.reset();
       formStatus.textContent =
-        "Votre message a bien été envoyé. Merci, je vous répondrai rapidement.";
+        "[OK] Message transmis. Merci, je vous répondrai rapidement.";
       formStatus.classList.add("success");
     } catch (error) {
-      formStatus.textContent =
+      formStatus.textContent = `[ERR] ${
         error instanceof Error
           ? error.message
-          : "Impossible d’envoyer votre message. Veuillez réessayer.";
+          : "Impossible d’envoyer votre message. Veuillez réessayer."
+      }`;
       formStatus.classList.add("error");
     } finally {
       formStatus.hidden = false;
       submitButton.disabled = false;
-      submitButton.textContent = "Envoyer le message";
+      submitButton.textContent = "Transmettre le message";
     }
   });
 }
@@ -213,13 +253,33 @@ if (contactForm) {
 const backToTop = document.createElement("button");
 backToTop.type = "button";
 backToTop.className = "back_to_top";
-backToTop.textContent = "↑ Haut";
+backToTop.textContent = "▲ HAUT";
 backToTop.setAttribute("aria-label", "Retourner en haut de la page");
 document.body.append(backToTop);
 
-window.addEventListener("scroll", () => {
-  backToTop.classList.toggle("is-visible", window.scrollY > 500);
-});
+const navigationBar = document.querySelector(".nav_bar");
+
+function updateScrollProgress() {
+  const scrollableHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+  const progress =
+    scrollableHeight > 0 ? Math.min(window.scrollY / scrollableHeight, 1) : 0;
+
+  navigationBar?.style.setProperty("--scroll-progress", progress.toFixed(4));
+}
+
+updateScrollProgress();
+
+window.addEventListener(
+  "scroll",
+  () => {
+    backToTop.classList.toggle("is-visible", window.scrollY > 500);
+    updateScrollProgress();
+  },
+  { passive: true },
+);
+
+window.addEventListener("resize", updateScrollProgress);
 
 backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });

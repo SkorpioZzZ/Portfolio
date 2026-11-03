@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alexandre Zapolski | Développeur Web junior</title>
+    <title>Alexandre Zapolski | Développeur web junior</title>
     <meta
       name="description"
-      content="Bienvenue sur le portfolio d'Alexandre Zapolski, développeur web junior. Découvrez mes projets et compétences en développement web."
+      content="Alexandre Zapolski, en Bachelor 3 Développement Web, recherche une alternance dans la tech en Île-de-France. Découvrez ses projets, son parcours et son homelab."
     />
     <meta name="theme-color" content="#080d12" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -17,11 +17,11 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Alexandre Zapolski | Développeur Web junior"
+      content="Alexandre Zapolski | Développeur web junior"
     />
     <meta
       property="og:description"
-      content="Découvrez le portfolio d'Alexandre Zapolski, développeur web junior."
+      content="En Bachelor 3 Développement Web, Alexandre Zapolski recherche une alternance dans la tech en Île-de-France."
     />
     <meta
       property="og:image"
@@ -30,11 +30,18 @@
     <meta property="og:url" content="https://skorpiozzz.github.io/Portfolio/" />
 
     <link rel="icon" type="image/png" href="AZ.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
 
   <body>
+    <a class="skip_link" href="#contenu">Aller au contenu</a>
     <header>
       <button
         class="theme_toggle"
@@ -43,16 +50,41 @@
         aria-label="Activer le thème clair"
         title="Activer le thème clair"
       ></button>
+      <p class="hud_status" aria-hidden="true">
+        [ SYS.ONLINE ] — Développeur web junior
+      </p>
       <h1>Alexandre Zapolski</h1>
       <p>
-        Développeur web junior en formation, je crée des sites modernes,
-        accessibles et responsives, avec une attention particulière portée à la
-        clarté et à l’expérience utilisateur.
+        En Bachelor 3, je conçois des projets de l’interface jusqu’au serveur et
+        je recherche une alternance dans la tech en Île-de-France. Curieux de
+        tout, je m’adapte vite aux outils de l’équipe.
       </p>
       <div class="hero_actions">
         <a class="primary_button" href="#projets">Voir mes projets</a>
         <a class="secondary_button" href="#contact">Me contacter</a>
+        <a
+          class="secondary_button"
+          href="assets/CV-Alexandre-Zapolski.pdf"
+          download
+          >Télécharger mon CV <span class="file_meta">(PDF)</span></a
+        >
       </div>
+      <ul class="hud_stats">
+        <li>
+          <strong data-count="3" aria-hidden="true">03</strong>
+          <span><span class="visually_hidden">3 </span>Projets</span>
+        </li>
+        <li>
+          <strong data-count="1" aria-hidden="true">01</strong>
+          <span><span class="visually_hidden">1 </span>Homelab</span>
+        </li>
+        <li>
+          <strong data-count="10" data-suffix="+" aria-hidden="true"
+            >10+</strong
+          >
+          <span><span class="visually_hidden">Plus de 10 </span>Technos</span>
+        </li>
+      </ul>
     </header>
 
     <nav class="nav_bar" aria-label="Menu de navigation">
@@ -66,28 +98,31 @@
       </ul>
     </nav>
 
-    <main>
+    <main id="contenu" tabindex="-1">
       <section id="apropos">
         <h2>À propos</h2>
         <p>
-          Actuellement en Bachelor Développement Web, je suis passionné par la
-          création de sites web et d'applications interactives.<br /><br />
-          À travers ce portfolio, je vous présente mon parcours, mes compétences
-          et les projets que je réalise pour progresser.
+          Après un BTS Négociation et Digitalisation de la Relation Client et
+          une expérience de conseiller de vente automobile, je me reconvertis
+          dans la tech. Je suis aujourd’hui en Bachelor 3 Développement Web chez
+          DECODE.
         </p>
 
-        <h3>Qui suis-je ?</h3>
+        <h3>Le déclic</h3>
         <p>
-          Je m'appelle Alexandre Zapolski. Diplômé d'un BTS en Négociation et
-          Digitalisation de la Relation Client, j'ai d'abord travaillé dans
-          l'automobile comme conseiller de vente. Aujourd'hui, je me reconvertis
-          dans le développement web, un domaine qui associe créativité, logique
-          et apprentissage continu.
+          Tout est parti de l’envie de comprendre ce qui se passe derrière
+          l’écran. En transformant un vieil ordinateur portable en serveur
+          personnel, j’ai pris goût à configurer, tester, casser, réparer et
+          documenter. C’est ce plaisir de bidouiller jusqu’à ce que ça marche
+          qui m’a donné envie d’en faire mon métier.
         </p>
+
+        <h3>Ce que j’apporte</h3>
         <p>
-          J'aime créer, comprendre comment les choses fonctionnent et apprendre
-          de nouvelles compétences. Mon objectif est de construire des sites
-          modernes, clairs et adaptés aux besoins des utilisateurs.
+          Mon passé commercial m’a appris à écouter un besoin et à le
+          reformuler. La technique me permet d’y répondre concrètement, quel que
+          soit l’outil : j’apprends vite et je m’adapte à l’environnement de
+          l’équipe.
         </p>
       </section>
 
@@ -119,13 +154,13 @@
             commercial.
           </li>
           <li>
-            Développement des compétences en communication, négociation et
-            organisation.
+            Traduire un besoin client en solution adaptée : la même démarche que
+            l’analyse d’un besoin fonctionnel.
           </li>
         </ul>
         <h3>
           2023-2025 : BTS Négociation et Digitalisation de la Relation Client
-          (NDRC)
+          (NDRC) — CFA ISCIO, en alternance chez Hyundai
         </h3>
         <ul>
           <li>
@@ -133,41 +168,75 @@
             commerciales.
           </li>
           <li>
-            Expérience en entreprise : prospection, analyse des besoins et suivi
-            client.
+            Expérience en entreprise chez Hyundai : prospection, analyse des
+            besoins et suivi client.
           </li>
           <li>
-            Découverte des outils numériques, notamment WordPress et PrestaShop.
+            Premier contact avec le web à travers WordPress et PrestaShop.
           </li>
         </ul>
-      </section>
-
-      <section id="pourquoi_le_developpement">
-        <h2>Pourquoi le développement web ?</h2>
-        <p>
-          J’apprécie le développement web parce qu’il permet de partir d’une
-          idée et de la transformer en une interface réellement utilisable.
-          Chaque projet me donne l’occasion de résoudre des problèmes,
-          d’améliorer mon raisonnement et de créer une expérience plus claire
-          pour l’utilisateur.
-        </p>
       </section>
 
       <section id="apprentissage">
         <h2>Compétences</h2>
-        <ul>
-          <li>Front-end : HTML, CSS, JavaScript</li>
-          <li>Back-end : PHP, MySQL</li>
-          <li>Outils : Git, GitHub, VS Code</li>
+        <ul class="skills">
+          <li>
+            <h3>Front-end</h3>
+            <p class="project_tech">
+              <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+              <span>React</span>
+            </p>
+          </li>
+          <li>
+            <h3>Back-end</h3>
+            <p class="project_tech">
+              <span>PHP</span> <span>Node.js</span> <span>Express</span>
+            </p>
+          </li>
+          <li>
+            <h3>Bases de données</h3>
+            <p class="project_tech">
+              <span>MySQL</span> <span>PostgreSQL</span>
+            </p>
+          </li>
+          <li>
+            <h3>Système &amp; déploiement</h3>
+            <p class="project_tech">
+              <span>Linux (Debian)</span> <span>Docker</span>
+              <span>Docker Compose</span> <span>SSH</span>
+            </p>
+          </li>
+          <li>
+            <h3>Outils</h3>
+            <p class="project_tech">
+              <span>Git</span> <span>GitHub</span> <span>VS Code</span>
+            </p>
+          </li>
+          <li class="skills_learning">
+            <h3>En cours d’apprentissage</h3>
+            <p class="project_tech"><span>Symfony</span> <span>Vue.js</span></p>
+          </li>
+          <li class="skills_soft">
+            <h3>Savoir-être</h3>
+            <p class="project_tech">
+              <span>Écoute du besoin client</span> <span>Communication</span>
+              <span>Négociation</span> <span>Organisation</span>
+            </p>
+          </li>
         </ul>
         <h3>Objectifs</h3>
         <p>
-          Je souhaite consolider mes compétences en HTML, CSS, JavaScript, PHP
-          et Python, tout en développant ma capacité à concevoir des projets web
-          complets. Je recherche une opportunité de stage, d’alternance ou un
-          premier poste qui me permettra de progresser au sein d’une équipe et
-          de mettre mes connaissances en pratique.
+          En Bachelor 3 Développement Web, je recherche une
+          <strong>alternance</strong> (1 semaine à l’école / 3 semaines en
+          entreprise) dès que possible, en Île-de-France.
         </p>
+        <p>
+          Je suis ouvert à <strong>tous les postes de la tech</strong> :
+          développement, systèmes, support, outils internes et à toutes les
+          technologies. J’apprends vite et j’aime comprendre comment les choses
+          fonctionnent.
+        </p>
+        <a class="secondary_button" href="#contact">Me contacter</a>
       </section>
 
       <section id="projets">
@@ -175,15 +244,62 @@
         <ul class="projets">
           <li>
             <img
-              src="math_cov/math_cov.png"
+              src="assets/projets/nexa.webp"
+              alt="Aperçu du tableau de bord Nexa"
+              width="720"
+              height="350"
+              loading="lazy"
+            />
+            <h3>Nexa</h3>
+            <p>
+              Une application web de gestion de projets permettant d’organiser
+              les tâches, de suivre leur avancement et de gérer les membres
+              d’une équipe avec un système de rôles et de permissions.
+            </p>
+            <p class="project_learned">
+              Concevoir une application complète : gestion des droits, base de
+              données et mise en ligne.
+            </p>
+            <p class="project_tech">
+              <span>React</span> <span>Node.js</span> <span>Express</span>
+              <span>PostgreSQL</span> <span>Docker</span>
+            </p>
+            <div class="project_links">
+              <a
+                href="https://dashboard-nexa.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Voir le site</a
+              >
+              <a
+                href="https://github.com/SkorpioZzZ/dashboard-nexa"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Voir le code</a
+              >
+            </div>
+          </li>
+
+          <li>
+            <img
+              src="assets/projets/math-covering.webp"
               alt="Aperçu du site Math Covering"
+              width="720"
+              height="326"
+              loading="lazy"
             />
             <h3>Math Covering</h3>
             <p>
               Un site vitrine de démonstration pour une activité de covering et
-              de detailing automobile, créé avec HTML, CSS et JavaScript.
+              de detailing automobile.
             </p>
-            <p class="project_tech">HTML - CSS - JavaScript</p>
+            <p class="project_learned">
+              Concevoir un site lisible sur mobile comme sur ordinateur et le
+              mettre en ligne.
+            </p>
+            <p class="project_tech">
+              <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+            </p>
             <div class="project_links">
               <a
                 href="https://skorpiozzz.github.io/Math_Cov/"
@@ -202,8 +318,11 @@
 
           <li>
             <img
-              src="A table/2026-10-09_10-04.png"
-              alt="Aperçu de l'application À table"
+              src="assets/projets/a-table.webp"
+              alt="Aperçu de l’application À table"
+              width="526"
+              height="667"
+              loading="lazy"
             />
             <h3>À table</h3>
             <p>
@@ -211,7 +330,13 @@
               repas grâce à une roulette, de filtrer les recettes et de gérer
               ses recettes personnelles.
             </p>
-            <p class="project_tech">HTML - CSS - JavaScript</p>
+            <p class="project_learned">
+              Penser une application autour d’un usage quotidien : trouver vite
+              une idée de repas.
+            </p>
+            <p class="project_tech">
+              <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+            </p>
             <div class="project_links">
               <a
                 href="https://skorpiozzz.github.io/A-table/"
@@ -227,36 +352,6 @@
               >
             </div>
           </li>
-
-          <li>
-            <img
-              src="Nexa/2026-10-13_11-41.png"
-              alt="Aperçu du tableau de bord Nexa"
-            />
-            <h3>Nexa</h3>
-            <p>
-              Une application web de gestion de projets permettant d'organiser
-              les tâches, de suivre leur avancement et de gérer les membres
-              d'une équipe avec un système de rôles et de permissions.
-            </p>
-            <p class="project_tech">
-              React - Node.js - Express - PostgreSQL - Docker
-            </p>
-            <div class="project_links">
-              <a
-                href="https://dashboard-nexa.onrender.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Voir le site</a
-              >
-              <a
-                href="https://github.com/SkorpioZzZ/dashboard-nexa"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Voir le code</a
-              >
-            </div>
-          </li>
         </ul>
       </section>
 
@@ -264,14 +359,23 @@
         <h2>Homelab</h2>
         <p>
           Mon homelab est un serveur personnel basé sur un ancien Dell Latitude
-          E5510 sous Debian GNU/Linux 13. Je l'ai mis en place pour expérimenter
-          l'administration système Linux, l'auto-hébergement de services, la
-          conteneurisation et l'intelligence artificielle locale.
+          E5510 sous Debian GNU/Linux 13. Je l’ai mis en place pour expérimenter
+          l’administration système Linux, l’auto-hébergement de services, la
+          conteneurisation et l’intelligence artificielle locale.
         </p>
+        <div class="homelab_actions">
+          <a
+            class="primary_button"
+            href="https://github.com/SkorpioZzZ/homelab-infrastructure"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Voir le projet sur GitHub</a
+          >
+        </div>
         <figure class="homelab_schema">
           <img
             src="assets/homelab-schema.svg"
-            alt="Schéma de l'architecture du homelab : un ThinkPad d'administration accède au serveur Dell sous Debian 13 par tunnel SSH et par le réseau local, avec Docker, Open WebUI, Ollama et Portainer."
+            alt="Schéma de l’architecture du homelab : un ThinkPad d’administration accède au serveur Dell sous Debian 13 par tunnel SSH et par le réseau local, avec Docker, Open WebUI, Ollama et Portainer."
             width="760"
             height="270"
             loading="lazy"
@@ -285,47 +389,43 @@
             <img
               class="photo_materiel"
               src="assets/homelab-dell.jpg"
-              alt="Le Dell Latitude E5510 du homelab, allumé sur l'écran de connexion Debian 13"
+              alt="Le Dell Latitude E5510 du homelab, allumé sur l’écran de connexion Debian 13"
               width="800"
               height="600"
               loading="lazy"
             />
             <h3>Matériel</h3>
-            <p>
-              Dell Latitude E5510 équipé d'un processeur Intel Core i5 M 560, de
-              4 Go de RAM et d'un SSD de 250 Go.
-            </p>
+            <p>Un ancien ordinateur portable recyclé en serveur personnel.</p>
             <p class="project_tech">
-              Dell Latitude E5510, Intel Core i5 M 560, 4 Go RAM, SSD 250 Go
+              <span>Dell Latitude E5510</span> <span>Intel Core i5 M 560</span>
+              <span>4 Go RAM</span> <span>SSD 250 Go</span>
             </p>
           </li>
           <li>
             <h3>Système et services</h3>
             <p>
-              Le serveur fonctionne sous Debian GNU/Linux 13 (Trixie). Docker et
-              Docker Compose permettent de déployer et de gérer Open WebUI pour
-              l'interface utilisateur de l'IA locale, Ollama pour l'exécution
-              des modèles d'IA locaux et Portainer CE pour l'administration des
-              conteneurs. Samba est également utilisé pour le partage de
-              fichiers sur le réseau local.
+              Des services conteneurisés que j’héberge et supervise moi-même :
+              une IA qui tourne en local, une interface d’administration et un
+              partage de fichiers sur le réseau.
             </p>
             <p class="project_tech">
-              Debian 13, Linux, Docker, Docker Compose, Open WebUI, Ollama,
-              Portainer CE, Samba
+              <span>Debian 13</span> <span>Linux</span> <span>Docker</span>
+              <span>Docker Compose</span> <span>Open WebUI</span>
+              <span>Ollama</span> <span>Portainer CE</span> <span>Samba</span>
             </p>
           </li>
           <li>
-            <h3>Ce que j'y apprends</h3>
+            <h3>Ce que j’y apprends</h3>
             <p>
-              Ce projet me permet de pratiquer l'administration Linux, le
-              déploiement et la gestion de conteneurs, l'administration à
-              distance par SSH, la configuration du réseau et du pare-feu,
-              l'hébergement de services, le déploiement d'une IA locale ainsi
-              que le diagnostic des problèmes et la documentation technique.
+              Administrer un serveur à distance de façon sécurisée,
+              diagnostiquer ce qui ne marche pas et documenter chaque étape.
             </p>
             <p class="project_tech">
-              Administration système, Linux, SSH, Docker, Réseau, Sécurité, IA
-              locale, Dépannage, Documentation technique
+              <span>Administration système</span> <span>Linux</span>
+              <span>SSH</span> <span>Docker</span> <span>Réseau</span>
+              <span>Pare-feu UFW</span> <span>IA locale</span>
+              <span>Dépannage</span>
+              <span>Documentation technique</span>
             </p>
           </li>
         </ul>
@@ -334,8 +434,8 @@
       <section id="contact">
         <h2>Contact</h2>
         <p>
-          Vous pouvez me contacter pour échanger autour d'un projet, d'une
-          opportunité ou de mon parcours.
+          Une alternance, un projet ou une question sur mon parcours ?
+          Écrivez-moi via le formulaire ou retrouvez-moi sur LinkedIn et GitHub.
         </p>
 
         <form
@@ -348,6 +448,14 @@
             name="access_key"
             value="65ddaa1f-b4f3-42bf-a58d-a4510def24a2"
           />
+
+          <div class="terminal_bar" aria-hidden="true">
+            <span class="terminal_dots"><span></span><span></span><span></span></span>
+            <span class="terminal_title">alexandre@portfolio: ~/contact</span>
+          </div>
+          <p class="terminal_line" aria-hidden="true">
+            <span class="terminal_prompt">$</span> ./nouveau-message.sh
+          </p>
 
           <div>
             <label for="nom">Nom</label>
@@ -395,9 +503,27 @@
             ></textarea>
           </div>
 
-          <button type="submit">Envoyer le message</button>
+          <button type="submit">Transmettre le message</button>
           <p class="form_status" role="status" aria-live="polite" hidden></p>
         </form>
+
+        <div class="contact_links">
+          <a
+            href="https://www.linkedin.com/in/alexandre-zapolski-58743b172/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/SkorpioZzZ"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a href="assets/CV-Alexandre-Zapolski.pdf" download
+            >Mon CV <span class="file_meta">(PDF)</span></a
+          >
+        </div>
       </section>
     </main>
 
