@@ -209,7 +209,8 @@ if (contactForm) {
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const formIsValid = fields.every((field) => validateField(field));
+    // map() valide tous les champs (every() s'arrêterait au premier invalide).
+    const formIsValid = fields.map(validateField).every(Boolean);
 
     if (!formIsValid) {
       fields.find((field) => field.getAttribute("aria-invalid") === "true")?.focus();
