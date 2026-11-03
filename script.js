@@ -204,7 +204,7 @@ function validateField(field) {
 if (contactForm) {
   const fields = [
     ...contactForm.querySelectorAll(
-      'input:not([type="hidden"]):not([name="website"]), textarea',
+      'input:not([type="hidden"]):not([name="botcheck"]), textarea',
     ),
   ];
   const submitButton = contactForm.querySelector('button[type="submit"]');
