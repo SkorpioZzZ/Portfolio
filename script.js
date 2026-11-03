@@ -20,14 +20,7 @@ const projectCards = [...document.querySelectorAll(".projets li")];
 const themeToggle = document.querySelector(".theme_toggle");
 const THEME_KEY = "portfolio-theme";
 
-function readStoredTheme() {
-  try {
-    return localStorage.getItem(THEME_KEY);
-  } catch {
-    return null;
-  }
-}
-
+// Le thème sauvegardé est appliqué au chargement par theme-init.js.
 function storeTheme(theme) {
   try {
     localStorage.setItem(THEME_KEY, theme);
@@ -36,15 +29,9 @@ function storeTheme(theme) {
   }
 }
 
-const savedTheme = readStoredTheme();
-
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
-
-if (savedTheme === "light") {
-  document.documentElement.dataset.theme = "light";
-}
 
 function updateThemeToggle() {
   const isLightTheme = document.documentElement.dataset.theme === "light";
