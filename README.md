@@ -1,5 +1,7 @@
 # Portfolio d'Alexandre Zapolski
 
+**Site en ligne : [skorpiozzz.github.io/Portfolio](https://skorpiozzz.github.io/Portfolio/)**
+
 Portfolio personnel présentant mon parcours, mes compétences et mes projets en développement web.
 
 ## À propos
@@ -15,39 +17,59 @@ Ce portfolio me permet de présenter mon évolution, mes compétences techniques
 - **JavaScript** — interactions et fonctionnalités dynamiques
 - **Git / GitHub** — gestion du code source et versionnement
 
+Les polices (Inter, Barlow Condensed, JetBrains Mono) sont auto-hébergées dans `assets/fonts/` : aucune requête n'est envoyée à Google Fonts.
+
 ## Fonctionnalités
 
 Le portfolio comprend notamment :
 
 - une présentation de mon parcours ;
 - une section dédiée à mes compétences ;
-- une présentation de mes projets ;
-- un formulaire de contact fonctionnel ;
-- un changement de thème clair/sombre ;
+- une présentation de mes projets et de mon homelab ;
+- un formulaire de contact fonctionnel, ainsi qu'un lien e-mail direct ;
+- un changement de thème clair/sombre, qui suit le réglage du système tant qu'aucun choix n'a été fait ;
 - une interface responsive adaptée aux différents écrans ;
 - des améliorations liées à l'accessibilité et à l'expérience utilisateur.
 
 ## Projets présentés
 
+### Nexa
+
+Une application web de gestion de projets permettant d'organiser les tâches, de suivre leur avancement et de gérer les membres d'une équipe avec un système de rôles et de permissions.
+
+**Technologies :** React, Node.js, Express, PostgreSQL, Docker
+
+- [Voir le site](https://dashboard-nexa.onrender.com/)
+- [Voir le code](https://github.com/SkorpioZzZ/dashboard-nexa)
+
 ### Math Covering
 
-Site vitrine de démonstration pour une activité de covering et de detailing automobile.
+Un site vitrine de démonstration pour une activité de covering et de detailing automobile.
 
 **Technologies :** HTML, CSS, JavaScript
 
 - [Voir le site](https://skorpiozzz.github.io/Math_Cov/)
 - [Voir le code](https://github.com/SkorpioZzZ/Math_Cov)
 
-D'autres projets seront ajoutés au fur et à mesure de leur réalisation.
-
 ### À table
 
-Application de recettes avec roulette, filtres et gestion de recettes personnelles. Les recettes personnalisées sont enregistrées dans le stockage local du navigateur.
+Une application de recettes permettant de trouver une idée de repas grâce à une roulette, de filtrer les recettes et de gérer ses recettes personnelles.
 
 **Technologies :** HTML, CSS, JavaScript
 
-- [Voir le site](https://skorpiozzz.github.io/Portfolio/a-table/)
+- [Voir le site](https://skorpiozzz.github.io/A-table/)
 - [Voir le code](https://github.com/SkorpioZzZ/A-table)
+
+### Homelab
+
+Un serveur personnel basé sur un ancien Dell Latitude E5510 sous Debian GNU/Linux 13, mis en place pour expérimenter l'administration système Linux, l'auto-hébergement de services, la conteneurisation et l'intelligence artificielle locale.
+
+- **Matériel :** Dell Latitude E5510, Intel Core i5 M 560, 4 Go de RAM, SSD 250 Go
+- **Système et services :** Debian 13, Docker, Docker Compose, Open WebUI, Ollama, Portainer CE, Samba
+
+- [Voir le projet sur GitHub](https://github.com/SkorpioZzZ/homelab-infrastructure)
+
+D'autres projets seront ajoutés au fur et à mesure de leur réalisation.
 
 ## Déploiement
 
@@ -62,12 +84,16 @@ Portfolio/
 ├── index.html
 ├── style.css
 ├── script.js
+├── theme-init.js            # applique le thème avant le premier affichage
+├── AZ.png                   # favicon
 ├── assets/
-│   ├── projets/          # captures des projets (WebP)
-│   ├── homelab-dell.jpg
+│   ├── fonts/               # polices WOFF2 auto-hébergées, licences OFL et README
+│   ├── projets/             # captures des projets (WebP)
+│   ├── CV-Alexandre-Zapolski.pdf
+│   ├── homelab-dell.webp    # photo affichée sur le site
+│   ├── homelab-dell.jpg     # original, non utilisé par la page
 │   ├── homelab-schema.svg
 │   └── portfolio-preview.png
-├── .htaccess
 ├── .gitignore
 └── README.md
 ```

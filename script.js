@@ -16,17 +16,21 @@ const navigationLinks = [
   ...document.querySelectorAll(".nav_bar a, .section_rail a"),
 ];
 const contactForm = document.querySelector(".contact_form");
-const projectCards = [...document.querySelectorAll(".projets li")];
 const themeToggle = document.querySelector(".theme_toggle");
-const savedTheme = localStorage.getItem("portfolio-theme");
+const THEME_KEY = "portfolio-theme";
+
+// Le thème sauvegardé est appliqué au chargement par theme-init.js.
+function storeTheme(theme) {
+  try {
+    localStorage.setItem(THEME_KEY, theme);
+  } catch {
+    // Stockage indisponible : le thème s'applique sans être mémorisé.
+  }
+}
 
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
-
-if (savedTheme === "light") {
-  document.documentElement.dataset.theme = "light";
-}
 
 function updateThemeToggle() {
   const isLightTheme = document.documentElement.dataset.theme === "light";
@@ -46,10 +50,10 @@ themeToggle?.addEventListener("click", () => {
 
   if (isLightTheme) {
     delete document.documentElement.dataset.theme;
-    localStorage.setItem("portfolio-theme", "dark");
+    storeTheme("dark");
   } else {
     document.documentElement.dataset.theme = "light";
-    localStorage.setItem("portfolio-theme", "light");
+    storeTheme("light");
   }
 
   updateThemeToggle();
@@ -123,19 +127,6 @@ const sectionObserver = new IntersectionObserver(
 
 sections.forEach((section) => sectionObserver.observe(section));
 
-projectCards.forEach((card) => {
-  card.addEventListener("mouseenter", () => card.classList.add("is-hovered"));
-  card.addEventListener("mouseleave", () =>
-    card.classList.remove("is-hovered"),
-  );
-  card.addEventListener("focusin", () => card.classList.add("is-hovered"));
-  card.addEventListener("focusout", (event) => {
-    if (!card.contains(event.relatedTarget)) {
-      card.classList.remove("is-hovered");
-    }
-  });
-});
-
 const errorMessages = {
   name: "Veuillez saisir votre nom.",
   email: "Veuillez saisir une adresse e-mail valide.",
@@ -186,7 +177,7 @@ function validateField(field) {
 if (contactForm) {
   const fields = [
     ...contactForm.querySelectorAll(
-      'input:not([type="hidden"]):not([name="website"]), textarea',
+      'input:not([type="hidden"]):not([name="botcheck"]), textarea',
     ),
   ];
   const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -204,7 +195,8 @@ if (contactForm) {
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const formIsValid = fields.every((field) => validateField(field));
+    // map() valide tous les champs (every() s'arrêterait au premier invalide).
+    const formIsValid = fields.map(validateField).every(Boolean);
 
     if (!formIsValid) {
       fields.find((field) => field.getAttribute("aria-invalid") === "true")?.focus();
@@ -225,10 +217,10 @@ if (contactForm) {
         method: contactForm.method,
         body: new FormData(contactForm),
       });
-      const result = await response.json();
+      const result = await response.json().catch(() => null);
 
-      if (!response.ok || result.success !== true) {
-        throw new Error(result.message || "L’envoi du message a échoué.");
+      if (!response.ok || result?.success !== true) {
+        throw new Error(result?.message || `HTTP ${response.status}`);
       }
 
       contactForm.reset();
@@ -236,11 +228,10 @@ if (contactForm) {
         "[OK] Message transmis. Merci, je vous répondrai rapidement.";
       formStatus.classList.add("success");
     } catch (error) {
-      formStatus.textContent = `[ERR] ${
-        error instanceof Error
-          ? error.message
-          : "Impossible d’envoyer votre message. Veuillez réessayer."
-      }`;
+      // Le détail technique reste dans la console, le visiteur voit un message clair.
+      console.error("Échec de l’envoi du formulaire :", error);
+      formStatus.textContent =
+        "[ERR] Impossible d’envoyer votre message. Veuillez réessayer plus tard.";
       formStatus.classList.add("error");
     } finally {
       formStatus.hidden = false;

@@ -12,7 +12,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; base-uri 'self'; form-action 'self' https://api.web3forms.com; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self' https://api.web3forms.com"
+      content="default-src 'self'; base-uri 'self'; form-action 'self' https://api.web3forms.com; object-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self' https://api.web3forms.com"
     />
     <meta property="og:type" content="website" />
     <meta
@@ -28,14 +28,13 @@
       content="https://skorpiozzz.github.io/Portfolio/assets/portfolio-preview.png"
     />
     <meta property="og:url" content="https://skorpiozzz.github.io/Portfolio/" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://skorpiozzz.github.io/Portfolio/" />
+
+    <script src="theme-init.js"></script>
 
     <link rel="icon" type="image/png" href="AZ.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
@@ -91,7 +90,7 @@
       <ul>
         <li><a href="#apropos">À propos</a></li>
         <li><a href="#parcours">Parcours</a></li>
-        <li><a href="#apprentissage">Compétences</a></li>
+        <li><a href="#competences">Compétences</a></li>
         <li><a href="#projets">Projets</a></li>
         <li><a href="#homelab">Homelab</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -177,7 +176,7 @@
         </ul>
       </section>
 
-      <section id="apprentissage">
+      <section id="competences">
         <h2>Compétences</h2>
         <ul class="skills">
           <li>
@@ -388,7 +387,7 @@
           <li>
             <img
               class="photo_materiel"
-              src="assets/homelab-dell.jpg"
+              src="assets/homelab-dell.webp"
               alt="Le Dell Latitude E5510 du homelab, allumé sur l’écran de connexion Debian 13"
               width="800"
               height="600"
@@ -435,22 +434,33 @@
         <h2>Contact</h2>
         <p>
           Une alternance, un projet ou une question sur mon parcours ?
-          Écrivez-moi via le formulaire ou retrouvez-moi sur LinkedIn et GitHub.
+          Écrivez-moi via le formulaire, par e-mail, ou retrouvez-moi sur
+          LinkedIn et GitHub.
         </p>
 
         <form
           class="contact_form"
           action="https://api.web3forms.com/submit"
           method="POST"
+          novalidate
         >
           <input
             type="hidden"
             name="access_key"
             value="65ddaa1f-b4f3-42bf-a58d-a4510def24a2"
           />
+          <input
+            type="checkbox"
+            name="botcheck"
+            hidden
+            tabindex="-1"
+            autocomplete="off"
+          />
 
           <div class="terminal_bar" aria-hidden="true">
-            <span class="terminal_dots"><span></span><span></span><span></span></span>
+            <span class="terminal_dots"
+              ><span></span><span></span><span></span
+            ></span>
             <span class="terminal_title">alexandre@portfolio: ~/contact</span>
           </div>
           <p class="terminal_line" aria-hidden="true">
@@ -508,6 +518,7 @@
         </form>
 
         <div class="contact_links">
+          <a href="mailto:zapolski.alexandre2991@gmail.com">E-mail</a>
           <a
             href="https://www.linkedin.com/in/alexandre-zapolski-58743b172/"
             target="_blank"
