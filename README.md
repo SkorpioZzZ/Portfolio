@@ -62,10 +62,10 @@ Une application de recettes permettant de trouver une idée de repas grâce à u
 
 ### Homelab
 
-Un serveur personnel basé sur un ancien Dell Latitude E5510 sous Debian GNU/Linux 13, mis en place pour expérimenter l'administration système Linux, l'auto-hébergement de services, la conteneurisation et l'intelligence artificielle locale.
+Un serveur personnel basé sur un ancien Dell Latitude E5510 sous Debian GNU/Linux 13, mis en place pour expérimenter l'administration système Linux, l'auto-hébergement de services, la conteneurisation, le réseau et la sécurité.
 
 - **Matériel :** Dell Latitude E5510, Intel Core i5 M 560, 4 Go de RAM, SSD 250 Go
-- **Système et services :** Debian 13, Docker, Docker Compose, Open WebUI, Ollama, Portainer CE, Samba
+- **Système et services :** Debian 13, Docker, Docker Compose, AdGuard Home, n8n, Portainer CE, Glances, Samba, Tailscale
 
 - [Voir le projet sur GitHub](https://github.com/SkorpioZzZ/homelab-infrastructure)
 

@@ -360,7 +360,7 @@
           Mon homelab est un serveur personnel basé sur un ancien Dell Latitude
           E5510 sous Debian GNU/Linux 13. Je l’ai mis en place pour expérimenter
           l’administration système Linux, l’auto-hébergement de services, la
-          conteneurisation et l’intelligence artificielle locale.
+          conteneurisation, le réseau et la sécurité.
         </p>
         <div class="homelab_actions">
           <a
@@ -374,13 +374,14 @@
         <figure class="homelab_schema">
           <img
             src="assets/homelab-schema.svg"
-            alt="Schéma de l’architecture du homelab : un ThinkPad d’administration accède au serveur Dell sous Debian 13 par tunnel SSH et par le réseau local, avec Docker, Open WebUI, Ollama et Portainer."
-            width="760"
-            height="270"
+            alt="Schéma de l’architecture du homelab : mes appareils accèdent au serveur Dell sous Debian 13 par un VPN chiffré, sans port ouvert sur la box, et par le réseau local ; le serveur héberge AdGuard Home, n8n, Portainer et Glances dans Docker, ainsi que Samba et SSH."
+            width="1200"
+            height="675"
             loading="lazy"
           />
           <figcaption>
-            Architecture du homelab : accès par tunnel SSH et réseau local.
+            Architecture du homelab : accès distant par VPN chiffré, aucun port
+            ouvert sur la box.
           </figcaption>
         </figure>
         <ul class="projets">
@@ -404,25 +405,29 @@
             <h3>Système et services</h3>
             <p>
               Des services conteneurisés que j’héberge et supervise moi-même :
-              une IA qui tourne en local, une interface d’administration et un
-              partage de fichiers sur le réseau.
+              un bloqueur de publicités et de traqueurs pour tous mes appareils,
+              même en 4G, de l’automatisation, une interface d’administration,
+              un tableau de supervision et un partage de fichiers sur le réseau.
             </p>
             <p class="project_tech">
               <span>Debian 13</span> <span>Linux</span> <span>Docker</span>
-              <span>Docker Compose</span> <span>Open WebUI</span>
-              <span>Ollama</span> <span>Portainer CE</span> <span>Samba</span>
+              <span>Docker Compose</span> <span>AdGuard Home</span>
+              <span>n8n</span> <span>Portainer CE</span> <span>Glances</span>
+              <span>Samba</span> <span>Tailscale</span>
             </p>
           </li>
           <li>
             <h3>Ce que j’y apprends</h3>
             <p>
-              Administrer un serveur à distance de façon sécurisée,
-              diagnostiquer ce qui ne marche pas et documenter chaque étape.
+              Administrer un serveur à distance sans l’exposer sur Internet,
+              filtrer le DNS de tout le foyer, diagnostiquer ce qui ne marche
+              pas, faire des choix adaptés à un matériel limité et documenter
+              chaque étape.
             </p>
             <p class="project_tech">
               <span>Administration système</span> <span>Linux</span>
               <span>SSH</span> <span>Docker</span> <span>Réseau</span>
-              <span>Pare-feu UFW</span> <span>IA locale</span>
+              <span>Pare-feu UFW</span> <span>DNS</span> <span>VPN</span>
               <span>Dépannage</span>
               <span>Documentation technique</span>
             </p>
